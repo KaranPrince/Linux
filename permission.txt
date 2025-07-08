@@ -1,0 +1,36 @@
+linux file permission:
+
+method 1:
+
+r-read-4
+w-write-2
+x-execute-1
+
+max permission -7
+min permission-0
+
+
+rw-  r-    r
+user  group   others
+
+
+method 2:
+chmod 666 filename
+chmod u+x abc
+
+
+
+create 3users 
+create 1 group
+
+task:
+user permission 0 permission
+just add 2 users to a group and give following rwx permission
+for that 1 or other user  and give following only r permission
+create a file and change the ownership to a particular file and folder
+
+
+
+chown userowner:groupowner filename
+chown userowner filename
+chown :groupowner filename

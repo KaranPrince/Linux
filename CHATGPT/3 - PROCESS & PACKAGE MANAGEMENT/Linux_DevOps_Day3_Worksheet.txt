@@ -1,0 +1,13 @@
+
+Linux for DevOps - Day 3 Worksheet
+
+1. Run `top` and observe CPU usage.
+2. Start a background task using `sleep 300 &`
+3. Check background jobs using `jobs`
+4. Bring the job to foreground using `fg`
+5. Send it back to background using `Ctrl+Z` and then `bg`
+6. Kill the process using its PID from `ps aux | grep sleep`
+7. Install wget using your system package manager (apt or yum)
+8. Remove wget using the same manager
+9. Try launching `nice -n 5 sleep 1000 &` and observe the job
+10. Capture all terminal output and submit screenshots

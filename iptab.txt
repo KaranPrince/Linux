@@ -1,0 +1,36 @@
+iptables -A INPUT -s 192.168.1.100 -j DROP
+
+
+iptables -D INPUT 1
+
+
+
+Here’s a simple explanation of the differences between DROP, ACCEPT, and REJECT in the context of iptables:
+
+Definitions
+ACCEPT: This action allows the packet to pass through and reach its destination. The connection is established normally.
+
+DROP: This action silently drops the packet without any notification to the sender. The sender does not know if the packet was dropped, making it appear as if the destination is unreachable.
+
+REJECT: This action sends a response back to the sender indicating that the packet was rejected. This can provide the sender with feedback that the connection is not allowed.
+
+Simple Example
+Assume you have a web server listening on port 80.
+
+ACCEPT: If you have a rule to accept traffic on port 80, a client trying to access your web server will successfully connect and receive the webpage.
+
+
+sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+DROP: If you set a rule to drop traffic on port 80, a client trying to connect will not receive any response. It will appear as if the server is down or unreachable.
+
+
+sudo iptables -A INPUT -p tcp --dport 80 -j DROP
+REJECT: If you set a rule to reject traffic on port 80, the client will receive an error response indicating that the connection was refused. This gives the client immediate feedback.
+
+
+sudo iptables -A INPUT -p tcp --dport 80 -j REJECT
+Summary
+ACCEPT: Connection is allowed (normal operation).
+DROP: Connection is silently ignored (no feedback to the sender).
+REJECT: Connection is refused with feedback (sender knows it's blocked).
+Each of these actions serves different purposes depending on the desired behavior for handling network traffic.

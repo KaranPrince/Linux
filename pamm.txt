@@ -1,0 +1,77 @@
+Objective:
+Configure PAM to enforce password complexity rules, including length, uppercase/lowercase letters, numbers, and special characters.
+
+Steps:
+1. Install PAM Password Quality Module (If Needed)
+Ensure the required PAM module (pam_pwquality.so) is installed:
+
+sudo yum install pam_pwquality -y   # For RHEL/CentOS
+sudo apt install libpam-pwquality -y  # For Ubuntu/Debian
+2. Configure Password Complexity Rules
+Edit the PAM password policy file:
+
+
+sudo nano /etc/security/pwquality.conf
+Set the following rules to enforce a strong password policy:
+
+
+minlen = 12        # Minimum password length (12 characters)
+dcredit = -1       # Require at least one digit
+ucredit = -1       # Require at least one uppercase letter
+lcredit = -1       # Require at least one lowercase letter
+ocredit = -1       # Require at least one special character
+retry = 3          # Allow 3 retries before failure
+Save and exit the file.
+
+3. Apply PAM Module in System Authentication
+Modify the PAM password authentication file:
+
+
+sudo nano /etc/pam.d/system-auth  # For RHEL/CentOS
+sudo nano /etc/pam.d/common-password  # For Ubuntu/Debian
+Find the following line:
+
+
+password requisite pam_pwquality.so retry=3
+Ensure it matches the policy you set in pwquality.conf. If it's missing, add:
+
+
+password requisite pam_pwquality.so retry=3 enforce_for_root
+The enforce_for_root option ensures that even the root user follows password policies.
+
+4. Apply Password History Restriction
+To prevent users from reusing old passwords, edit:
+
+
+sudo nano /etc/security/opasswd
+Then modify /etc/pam.d/system-auth or /etc/pam.d/common-password to add:
+
+password sufficient pam_unix.so remember=5
+This ensures users cannot reuse the last 5 passwords.
+
+5. Test the Policy
+Change the password for a user:
+
+passwd <username>
+Try setting a weak password (e.g., password123). It should be rejected.
+Try setting a strong password (e.g., Str0ng@Passw0rd). It should be accepted.
+6. Check Password Change Logs
+To verify if password changes were enforced, check:
+
+
+sudo tail -f /var/log/secure  # RHEL/CentOS
+sudo tail -f /var/log/auth.log  # Ubuntu/Debian
+Bonus: Add Account Lockout Policy
+To lock a user after 3 failed login attempts, add the following to /etc/pam.d/system-auth:
+
+auth required pam_tally2.so deny=3 unlock_time=600
+deny=3 → Lock the account after 3 failed login attempts.
+unlock_time=600 → Unlock the account automatically after 10 minutes.
+Check failed attempts with:
+
+
+pam_tally2 -u <username>
+Summary
+✅ Enforced strong password rules
+✅ Prevented password reuse
+✅ Implemented account lockout for security

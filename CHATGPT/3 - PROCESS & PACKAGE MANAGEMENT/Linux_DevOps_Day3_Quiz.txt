@@ -1,0 +1,32 @@
+
+Linux for DevOps - Day 3 Quiz
+
+1. Which command shows a live list of running processes?
+   a) ps   b) top   c) kill   d) jobs
+
+2. What does 'kill 1234' do?
+   a) Restarts a process   b) Stops the system   c) Terminates process 1234   d) Nothing
+
+3. Which command is used to send a job to background?
+   a) fg   b) kill   c) bg   d) ps
+
+4. What command will show all background jobs?
+   a) top   b) jobs   c) ps aux   d) bg
+
+5. How do you install a package in Ubuntu?
+   a) yum install   b) apt install   c) install pkg   d) pkgadd
+
+6. Which command removes a package in CentOS?
+   a) apt remove   b) rm pkg   c) yum remove   d) rpm delete
+
+7. What does the 'nice' command do?
+   a) Makes system faster   b) Deletes files   c) Sets process priority   d) Shows jobs
+
+8. How do you view processes with full details?
+   a) jobs   b) fg   c) ps aux   d) htop only
+
+9. What command switches a process to foreground?
+   a) bg   b) fg   c) top   d) htop
+
+10. Which package manager is used in RHEL/CentOS?
+    a) yum/dnf   b) apt   c) pkg   d) apt-get

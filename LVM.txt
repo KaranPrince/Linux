@@ -1,0 +1,23 @@
+lvm-logical volume management
+
+pv-physical volume
+pvcreate /dev/sdb1	
+
+vg-volume group
+vgcreate vgname pathofpv(/dev/sdb1)
+
+lv-logical volume
+lvcreate -L lG -n nameoflv nameofvg
+
+
+
+pv-> our partition
+|
+vg-> collection of physical volume (pv)
+|
+lv -> logical volume ( we can fetch a particular space from vg and we can mount in that).
+
+for verfying
+pvs or pvdisplay-physical volume
+vgs or vgdisplay- volume group
+lvs or lvdisplay- logical volume

@@ -1,0 +1,60 @@
+📝 Day 2 Quiz (Linux File Permissions & User Management)
+What command changes file permissions using numeric values?
+a) chmod  b) chown  c) ls  d) usermod
+
+What does chmod 755 file mean?
+a) All users can write
+b) Owner: rwx, Group: r-x, Others: r-x
+c) File is hidden
+d) Read-only for everyone
+
+Which command changes a file's owner?
+a) chmod  b) chown  c) chgrp  d) useradd
+
+How do you view current permissions on a file?
+a) view file  b) ls -l  c) cat file  d) ls -a
+
+What command adds a user?
+a) adduser  b) usermod  c) useradd  d) newuser
+
+How do you assign a group to a file?
+a) chmod  b) chown  c) chgrp  d) groupadd
+
+How to create a group in Linux?
+a) groupadd  b) makegroup  c) addgroup  d) chgrp
+
+What does rwxr--r-- mean?
+a) Owner has all permissions, group and others have read only
+b) All users can execute
+c) File is write-protected
+d) Owner has read-write only
+
+What is the use of usermod -aG devgroup user1?
+a) Rename group  b) Add user1 to devgroup
+c) Change user's home directory  d) Delete user
+
+How to delete a user and their home directory?
+a) userdel user  b) deluser -f user  c) userdel -r user  d) remove user -h
+
+📋 Day 2 Worksheet (Hands-on Task)
+Do this on your Linux VM:
+
+Create a file named secure.txt
+
+Set its permission to rw-r----- (use: chmod 640 secure.txt)
+
+Create a new user: testuser
+
+Create a new group: devopsgrp
+
+Change the file owner to testuser (sudo chown testuser secure.txt)
+
+Change the file group to devopsgrp (sudo chgrp devopsgrp secure.txt)
+
+Verify using ls -l secure.txt
+
+Use su - testuser and check access
+
+Use id testuser to see group info
+
+Take screenshots and save them for review

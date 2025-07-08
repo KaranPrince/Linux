@@ -1,0 +1,107 @@
+| Directory | Purpose                      |
+| --------- | ---------------------------- |
+| `/`       | Root of the file system      |
+| `/home`   | User directories             |
+| `/etc`    | Configuration files          |
+| `/bin`    | Essential user binaries      |
+| `/sbin`   | System binaries              |
+| `/var`    | Log and variable files       |
+| `/dev`    | Device files                 |
+| `/mnt`    | Temporary mount point        |
+| `/boot`   | Boot loader and kernel files |
+| `/usr`    | User applications            |
+
+
+💿 Disk Partitioning with fdisk
+
+# View current disks
+lsblk
+sudo fdisk -l
+
+# Start partitioning a new disk
+sudo fdisk /dev/sdb
+
+# Inside fdisk, use:
+n  # New partition
+p  # Primary
+w  # Write changes
+
+# Format and mount
+sudo mkfs.ext4 /dev/sdb1
+sudo mkdir /mnt/mydata
+sudo mount /dev/sdb1 /mnt/mydata
+
+# Permanent mount
+sudo nano /etc/fstab
+# Add line:
+# /dev/sdb1 /mnt/mydata ext4 defaults 0 0
+
+
+📦 LVM (Logical Volume Management)
+
+# Create LVM-compatible partition
+sudo fdisk /dev/sdb   → type 8e for LVM
+
+# Initialize Physical Volume
+sudo pvcreate /dev/sdb1
+
+# Create Volume Group
+sudo vgcreate myvg /dev/sdb1
+
+# Create Logical Volume
+sudo lvcreate -L 1G -n mylv myvg
+
+# Format and mount
+sudo mkfs.ext4 /dev/myvg/mylv
+sudo mkdir /mnt/lvmdata
+sudo mount /dev/myvg/mylv /mnt/lvmdata
+
+# Add to fstab for auto-mount
+/dev/myvg/mylv /mnt/lvmdata ext4 defaults 0 0
+
+
+📝 Quiz (Day 4)
+What command lists block devices?
+
+How do you start disk partitioning in Linux?
+
+Which filesystem type is common in Linux?
+
+What is the command to create a physical volume for LVM?
+
+What does vgcreate do?
+
+How do you format a partition?
+
+Where do you configure persistent mount points?
+
+Which command mounts a disk manually?
+
+What is the type code for LVM in fdisk?
+
+What file shows current mounted file systems?
+
+📋 Worksheet (Day 4)
+Run lsblk and identify all disks.
+
+Use fdisk to create a new 1GB partition.
+
+Format the new partition with mkfs.ext4.
+
+Mount the partition under /mnt/test1.
+
+Add it to /etc/fstab to mount on boot.
+
+Create a new LVM partition using fdisk (type 8e).
+
+Set up a PV → VG → LV (1GB).
+
+Format and mount the LV to /mnt/lvmtest.
+
+Add to /etc/fstab for auto-mounting.
+
+Write down output of lvdisplay, vgdisplay, and pvdisplay.
+
+
+
+

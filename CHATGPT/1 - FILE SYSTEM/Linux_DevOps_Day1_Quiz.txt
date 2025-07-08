@@ -1,0 +1,64 @@
+
+Linux for DevOps - Day 1 Quiz
+
+Choose the correct option:
+
+1. What command is used to display the current working directory?
+   a) pwd
+   b) cd
+   c) ls
+   d) dir
+
+2. Which command creates an empty file?
+   a) touch
+   b) mkdir
+   c) newfile
+   d) nano
+
+3. How do you list all files, including hidden ones?
+   a) ls -l
+   b) ls -a
+   c) list
+   d) showall
+
+4. What does the command 'cd ..' do?
+   a) Goes to the root directory
+   b) Goes to home directory
+   c) Moves up one directory
+   d) Opens directory
+
+5. Which command shows the username of the current user?
+   a) who
+   b) me
+   c) whoami
+   d) id
+
+6. What is the purpose of 'mv' command?
+   a) View file content
+   b) Make directory
+   c) Rename or move files
+   d) Mount volume
+
+7. Which command is used to delete a file?
+   a) rm
+   b) del
+   c) erase
+   d) rmdir
+
+8. What does 'ls -lh' do?
+   a) List all files
+   b) List files in long and human-readable format
+   c) List only hidden files
+   d) Show file history
+
+9. What does 'cat file.txt' do?
+   a) Deletes file.txt
+   b) Displays content of file.txt
+   c) Copies file.txt
+   d) Creates file.txt
+
+10. How do you see the last 5 lines of a file?
+    a) head -n 5
+    b) tail -n 5
+    c) end -5
+    d) view -last 5

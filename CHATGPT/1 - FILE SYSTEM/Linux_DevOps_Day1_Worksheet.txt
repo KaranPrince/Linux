@@ -1,0 +1,17 @@
+
+Linux for DevOps - Day 1 Worksheet
+
+Instructions:
+Complete the following tasks in your Linux VM terminal.
+
+1. Navigate to your home directory and create a new directory called devops_day1.
+2. Inside devops_day1:
+   a. Create a file named karan.txt
+   b. Add text "This is Karan learning DevOps" inside it
+   c. Copy the file to karan_copy.txt
+   d. Rename karan_copy.txt to karan_final.txt
+   e. Delete the original karan.txt
+   f. View the contents of karan_final.txt using 'cat'
+3. Use 'ls -lh' to confirm the file changes.
+4. Use 'history' command to view and screenshot your last 10 commands.
+5. Submit screenshots and your command outputs for review.

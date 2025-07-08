@@ -1,0 +1,29 @@
+su- to switch 
+cd - to move to from one dir to another
+ls -ltrh - to list all the files and directories
+pwd- to print present working directory
+touch- to create a file
+mkdir- to create a directory
+
+vim editor / nano
+vi-> to edit a file
+press I
+shift+esc+:->wq
+w- save
+q-quit
+
+cat - to view the file content
+
+remove-> file & directory
+rm - to remove a file in linux
+rmdir - to remove a directory
+
+
+rm -rf => which is used to delete forcefully -> file/ directory
+
+grep->to filter out a particular file/directory in linux
+
+cp & mv-> copy and move
+
+
+

@@ -1,0 +1,12 @@
+TEST
+
+* user&group
+* disk management
+* process management
+
+
+user, group, permission, change, ACL, umask, cp, mv, cron
+
+standard partition, LVM, swap
+
+kill, ps
